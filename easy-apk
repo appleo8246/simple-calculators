@@ -1,0 +1,37 @@
+package com.example.easy_one;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.text.Editable;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+    private TextView ans;
+    private EditText num1;
+    private EditText num2;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        ans = findViewById(R.id.Answer);
+        num1 = findViewById(R.id.number1);
+        num2 = findViewById(R.id.number2);
+    }
+
+    public void onclick(View view){
+
+        int a = Integer.parseInt(num1.getText().toString());
+        int b = Integer.parseInt(num2.getText().toString());
+        int sum = a + b;
+
+        ans.setText(String.valueOf(sum));
+    }
+
+    public void Reset(View view) {
+        ans.setText("Answer");
+    }
+}
